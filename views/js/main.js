@@ -449,10 +449,22 @@ var resizePizzas = function(size) {
 
   // Iterates through pizza elements on the page and changes their widths
   function changePizzaSizes(size) {
-    for (var i = 0; i < document.querySelectorAll(".randomPizzaContainer").length; i++) {
-      var dx = determineDx(document.querySelectorAll(".randomPizzaContainer")[i], size);
-      var newwidth = (document.querySelectorAll(".randomPizzaContainer")[i].offsetWidth + dx) + 'px';
-      document.querySelectorAll(".randomPizzaContainer")[i].style.width = newwidth;
+    switch(size) {
+      case "1":
+        newWidth = 25;
+        break;
+      case "2":
+        newWidth = 33.3;
+        break;
+      case "3":
+        newWidth = 50;
+        break;
+      default:
+        console.log("bug in sizeSwitcher");
+    }
+    var pizzaSizes = document.querySelectorAll(".randomPizzaContainer");
+    for (var i = 0; i < pizzaSizes.length; i++) {
+      pizzaSizes[i].style.width = newWidth + "%";
     }
   }
 
@@ -480,4 +492,3 @@ var timeToGenerate = window.performance.getEntriesByName("measure_pizza_generati
 console.log("Time to generate pizzas on load: " + timeToGenerate[0].duration + "ms");
 
 // Removed Janky sliding Pizzas in the background. Even though it was cheesy and in bad taste, it added nothing of value to the website.
-
