@@ -1,5 +1,9 @@
 ## Website Optimization
 ---
+###Initiating Website:
+
+Open index.html found in the first folder in your prefered browser (Though the prefered for the website is Google Chrome). 
+
 ### Description:
 
 This is the Udacity project focusing on optimizing given code using diagnostic tools inside Chrome as well as online resources in the form of web pages and other resources. I used GitHub pages to host my site. As it stands now, PageSpeed Insights gave me a 95/100 for mobile and 91/100 for desktop in the "Speed" Category.  
